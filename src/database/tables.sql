@@ -26,3 +26,19 @@ CREATE TABLE agendamento(
     FOREIGN KEY (id_visitante) REFERENCES visitante(id_visitante),
     FOREIGN KEY (id_exposicao) REFERENCES exposicao(id_exposicao)
 )
+
+CREATE TABLE sala(
+    num_sala INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao VARCHAR(200),
+    capacidade INT NOT NULL
+)
+
+CREATE TABLE partitura(
+    id_partitura INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    autor VARCHAR(100) NOT NULL,
+    ano INT NOT NULL,
+    link_musica VARCHAR(255),
+    arquivo_partitura VARCHAR(255)
+)

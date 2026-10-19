@@ -10,16 +10,16 @@ const validarAgendamento = [
         .bail()
         .isInt({ min: 1 })
         .withMessage('O id do visitante deve ser um número maior ou igual a 1')
-         .custom(async (id) => {
-        const [linhas] = await pool.query(
-            'SELECT id_visitante FROM visitante WHERE id_visitante = ?',
-            [id]
-        )
-        if (linhas.length === 0) {
-            throw new Error('O id deve pertencer a um visitante real')
-        }
-        return true
-    }),
+        .custom(async (id) => {
+            const [linhas] = await pool.query(
+                'SELECT id_visitante FROM visitante WHERE id_visitante = ?',
+                [id]
+            )
+            if (linhas.length === 0) {
+                throw new Error('O id deve pertencer a um visitante real')
+            }
+            return true
+        }),
 
     body('id_exposicao')
         .exists({ checkFalsy: true })
@@ -28,15 +28,15 @@ const validarAgendamento = [
         .isInt({ min: 1 })
         .withMessage('O id da exposição deve ser um número maior ou igual a 1')
         .custom(async (id) => {
-        const [linhas] = await pool.query(
-            'SELECT id_exposicao FROM exposicao WHERE id_exposicao = ?',
-            [id]
-        )
-        if (linhas.length === 0) {
-            throw new Error('O id deve pertencer a um exposição real')
-        }
-        return true
-    }),
+            const [linhas] = await pool.query(
+                'SELECT id_exposicao FROM exposicao WHERE id_exposicao = ?',
+                [id]
+            )
+            if (linhas.length === 0) {
+                throw new Error('O id deve pertencer a um exposição real')
+            }
+            return true
+        }),
 
     body('data_agendada')
         .exists({ checkFalsy: false })
@@ -49,7 +49,7 @@ const validarAgendamento = [
         .exists({ checkFalsy: false })
         .withMessage('A hora agendada é obrigatória')
         .bail()
-        .isTime({hourFormat:'hour24', mode:'default'})
+        .isTime({ hourFormat: 'hour24', mode: 'default' })
         .withMessage('Use uma hora válida no formato HH:mm (Relógio de 24h)'),
 
     body('status_agendamento')
