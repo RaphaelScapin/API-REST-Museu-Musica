@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#8cb7ac"/><stop offset="1" stop-color="#e5be89"/></linearGradient>
+    <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#d1a77b"/><stop offset="1" stop-color="#97664c"/></linearGradient>
+    <linearGradient id="shade" x2="1"><stop stop-color="#102e30" stop-opacity=".82"/><stop offset=".57" stop-color="#102e30" stop-opacity=".2"/><stop offset="1" stop-color="#102e30" stop-opacity=".08"/></linearGradient>
+  </defs>
+  <rect width="1800" height="1100" fill="url(#sky)"/>
+  <circle cx="1450" cy="170" r="102" fill="#f0d29c" opacity=".8"/>
+  <path d="M0 740 250 570l220 170 240-220 280 220 250-190 220 190 200-155 140 115v400H0Z" fill="#375d53" opacity=".7"/>
+  <rect y="895" width="1800" height="205" fill="#625343"/>
+  <g transform="translate(650 205)">
+    <path d="M-75 315 450 42l525 273v595H-75Z" fill="#614536"/>
+    <path d="m-45 316 495-251 495 251v565H-45Z" fill="url(#wall)"/>
+    <path d="M15 310 450 100l435 210v42H15Z" fill="#753f35"/>
+    <path d="M32 310 450 114l418 196" fill="none" stroke="#e5c09a" stroke-width="14"/>
+    <rect x="95" y="405" width="185" height="260" rx="86" fill="#344c46"/>
+    <rect x="117" y="427" width="141" height="226" rx="70" fill="#263c39"/>
+    <path d="M187 428v225M117 536h141" stroke="#d5af7c" stroke-width="9"/>
+    <rect x="356" y="407" width="150" height="195" rx="74" fill="#40534a"/>
+    <rect x="376" y="427" width="110" height="170" rx="54" fill="#233a37"/>
+    <path d="M431 428v169M376 510h110" stroke="#d5af7c" stroke-width="8"/>
+    <rect x="610" y="407" width="150" height="195" rx="74" fill="#40534a"/>
+    <rect x="630" y="427" width="110" height="170" rx="54" fill="#233a37"/>
+    <path d="M685 428v169M630 510h110" stroke="#d5af7c" stroke-width="8"/>
+    <rect x="329" y="685" width="235" height="195" rx="110" fill="#654538"/>
+    <rect x="353" y="710" width="187" height="170" rx="90" fill="#304844"/>
+    <path d="M329 780h235" stroke="#d8b386" stroke-width="9"/>
+    <path d="M-95 880h1070" stroke="#ddc49e" stroke-width="22"/>
+    <path d="M-30 915h930" stroke="#695c49" stroke-width="12"/>
+  </g>
+  <g fill="#25483d"><path d="M1510 895q-30-280 64-435 95 153 62 435Z"/><path d="M1680 895q-21-190 45-300 68 111 43 300Z"/></g>
+  <rect width="1800" height="1100" fill="url(#shade)"/>
+</svg>

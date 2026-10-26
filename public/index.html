@@ -1,11 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API REST Museu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça o Museu da Música – Itu: história, exposições, acervo musical e informações para planejar sua visita gratuita.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Museu da Música – Itu">
+  <meta property="og:description" content="Um lugar para ouvir, preservar e compartilhar a memória musical de Itu.">
+  <meta property="og:image" content="img/hero-home.svg">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>Museu da Música – Itu | Memória que se escuta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-    <h1>Seja bem vindo à API REST do museu da música</h1>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top site-navbar" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand brand-lockup" href="index.html" aria-label="Museu da Música – Itu, página inicial">
+          <img src="img/logo.svg" width="44" height="44" alt="">
+          <span><strong>Museu da Música</strong><small>ITU · DESDE 2007</small></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="tour-virtual.html">Tour Virtual</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exposicoes">Exposições</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" id="menuMusica" data-bs-toggle="dropdown" aria-expanded="false">Música</button>
+              <ul class="dropdown-menu" aria-labelledby="menuMusica">
+                <li><a class="dropdown-item" href="#acervo-musical">Partitura</a></li>
+                <li><a class="dropdown-item" href="#acervo-musical">Play</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#voluntariado">Seja Voluntário</a></li>
+            <li class="nav-item ms-lg-3"><a class="btn btn-primary nav-cta" href="mailto:museudamusica@itu.com.br?subject=Agendamento%20de%20visita">Agendar visita <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero-home" aria-labelledby="titulo-principal">
+      <div class="hero-shade"></div>
+      <div class="container hero-content">
+        <p class="eyebrow eyebrow-light">Um patrimônio vivo em Itu</p>
+        <h1 id="titulo-principal">Memória que<br><em>se escuta.</em></h1>
+        <!-- CONTEÚDO PROVISÓRIO: chamada institucional sujeita à aprovação do museu. -->
+        <p class="hero-copy">No coração de Itu, a música conta histórias de pessoas, casas e comunidades. Entre, descubra e faça parte dessa memória.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a class="btn btn-primary btn-lg" href="mailto:museudamusica@itu.com.br?subject=Agendamento%20de%20visita">Planeje sua visita <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline-light btn-lg" href="tour-virtual.html">Explorar o tour <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="hero-note"><span class="note-dot"></span> Entrada franca · Domingos, das 9h às 13h</p>
+      </div>
+      <a class="hero-scroll" href="#informacoes" aria-label="Ir para informações de visita"><span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="quick-facts" id="informacoes" aria-label="Informações para visitar">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-12 col-md-6 col-lg-3 fact-item">
+            <span class="fact-icon" aria-hidden="true">◷</span>
+            <div><span class="fact-label">Quando visitar</span><strong>Domingos, 9h–13h</strong></div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 fact-item">
+            <span class="fact-icon" aria-hidden="true">⌖</span>
+            <div><span class="fact-label">Onde estamos</span><strong>Rua Floriano Peixoto, 480</strong></div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 fact-item">
+            <span class="fact-icon" aria-hidden="true">✳</span>
+            <div><span class="fact-label">Acesso</span><strong>Entrada franca</strong></div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 fact-item">
+            <span class="fact-icon" aria-hidden="true">@</span>
+            <div><span class="fact-label">Fale com o museu</span><a href="mailto:museudamusica@itu.com.br">museudamusica@itu.com.br</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space about-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="image-frame about-image">
+              <img src="img/sobre-casa.svg" alt="Ilustração da fachada histórica do Museu da Música em Itu" loading="lazy" width="760" height="620">
+              <div class="image-caption"><span>Casa de 1890</span><span>Patrimônio de Itu</span></div>
+            </div>
+          </div>
+          <div class="col-lg-5 offset-lg-1">
+            <p class="eyebrow">Um lugar de encontros</p>
+            <h2 class="section-title">Uma casa. Muitas histórias.<br><em>Uma cidade que canta.</em></h2>
+            <p class="lead-copy">Criado em 2007 e mantido pelo Instituto Cultural de Itu, o museu pesquisa, preserva e comunica referências da produção e da memória musical de Itu e das diversas comunidades do Médio Tietê.</p>
+            <!-- CONTEÚDO PROVISÓRIO: texto de apresentação deve ser validado com o conteúdo institucional oficial. -->
+            <p class="body-copy">A coleção encontra morada em uma casa construída em 1890, tombada pelo CONDEPHAAT. Aqui, instrumentos, partituras e lembranças aproximam diferentes gerações da história da música.</p>
+            <a class="text-link" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer">Conheça a história do museu <span aria-hidden="true">↗</span></a>
+            <div class="heritage-note"><span class="heritage-year">1890</span><span>Uma casa histórica que segue abrindo suas portas para a cultura.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space exhibitions-section" id="exposicoes">
+      <div class="container">
+        <div class="section-heading d-md-flex justify-content-between align-items-end">
+          <div><p class="eyebrow">Percursos de escuta</p><h2 class="section-title">Cada sala, um universo.</h2><p class="body-copy mb-0">Conheça alguns temas das mostras de longa duração do museu.</p></div>
+          <a class="text-link d-inline-flex mt-3 mt-md-0" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer">Ver todas as exposições <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="row g-4 mt-2">
+          <div class="col-md-6 col-lg-4">
+            <article class="exhibit-card">
+              <a class="card-image-link" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Saiba mais sobre Música Popular no site do museu"><img src="img/mostra-popular.svg" alt="Ilustração de viola caipira e partitura" loading="lazy" width="720" height="520"></a>
+              <div class="exhibit-card-body"><span class="card-kicker">Mostra de longa duração</span><h3>Música Popular</h3><p>Cururus, modas de viola e outras expressões que atravessam a vida musical da região.</p><a class="text-link" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer">Saiba mais <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="exhibit-card">
+              <a class="card-image-link" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Saiba mais sobre Música Sacra Ituana no site do museu"><img src="img/mostra-sacra.svg" alt="Ilustração de órgão e manuscrito musical" loading="lazy" width="720" height="520"></a>
+              <div class="exhibit-card-body"><span class="card-kicker">Mostra de longa duração</span><h3>Música Sacra Ituana</h3><p>Instrumentos e repertórios ligados à tradição musical sacra de Itu.</p><a class="text-link" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer">Saiba mais <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="exhibit-card">
+              <a class="card-image-link" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Saiba mais sobre Música no Espaço Doméstico no site do museu"><img src="img/mostra-domestico.svg" alt="Ilustração de sala de estar antiga com piano" loading="lazy" width="720" height="520"></a>
+              <div class="exhibit-card-body"><span class="card-kicker">Mostra de longa duração</span><h3>Música no Espaço Doméstico</h3><p>Objetos e práticas que mostram como a música fazia parte do cotidiano familiar.</p><a class="text-link" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer">Saiba mais <span aria-hidden="true">↗</span></a></div>
+            </article>
+          </div>
+        </div>
+        <p class="small-note mt-4">O museu reúne cinco salas expositivas. Consulte o site oficial para conhecer também Música Marcial, de Seresta e de Concerto e O Mestre de Música e o Copista.</p>
+      </div>
+    </section>
+
+    <section class="section-space tour-promo-section">
+      <div class="container">
+        <div class="tour-promo">
+          <img src="img/tour-preview.svg" alt="" loading="lazy" width="1400" height="760">
+          <div class="tour-promo-shade"></div>
+          <div class="tour-promo-content">
+            <p class="eyebrow eyebrow-light">Descubra de onde estiver</p>
+            <h2>Uma visita no seu<br><em>próprio ritmo.</em></h2>
+            <p>Percorra os ambientes do museu antes de vir ou relembre uma visita especial.</p>
+            <a class="btn btn-light btn-lg" href="tour-virtual.html">Iniciar tour virtual <span aria-hidden="true">→</span></a>
+          </div>
+          <span class="tour-stamp" aria-hidden="true">ITU<br>SP</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space music-section" id="acervo-musical">
+      <div class="container">
+        <div class="row align-items-end mb-4">
+          <div class="col-lg-7"><p class="eyebrow">Do papel ao som</p><h2 class="section-title">A música continua.</h2></div>
+          <div class="col-lg-5"><p class="body-copy mb-0">Explore partituras e gravações que ajudam a contar a história musical de Itu.</p></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="music-card music-score">
+              <div class="music-card-icon" aria-hidden="true">♫</div>
+              <div class="music-card-content"><span class="card-kicker">Acervo digital</span><h3>Partitura</h3><p>Manuscritos e partituras revelam compositores, repertórios e modos de fazer música.</p><a class="btn btn-outline-dark" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer">Consultar partituras <span aria-hidden="true">↗</span></a></div>
+              <span class="music-watermark" aria-hidden="true">♬</span>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="music-card music-listen">
+              <div class="music-card-icon" aria-hidden="true">▶</div>
+              <div class="music-card-content"><span class="card-kicker">Para ouvir</span><h3>Play</h3><p>Escute “A louca” e “A noite de São João”, de Elias Álvares Lobo; o “Hino de Itu”, de Roberto Manzo e José Luís de Oliveira; e a “Ladainha a 4 vozes”, do Pe. Jesuíno do Monte Carmelo.</p><a class="btn btn-outline-dark" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer">Ouvir o acervo <span aria-hidden="true">↗</span></a></div>
+              <span class="music-watermark" aria-hidden="true">♫</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit-section section-space" id="agendar">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <p class="eyebrow eyebrow-light">Sua próxima descoberta</p>
+            <h2 class="section-title text-white">A cidade também<br><em>se conta por música.</em></h2>
+            <p class="visit-copy">A entrada é franca. Para agendar, fale com a equipe do museu. Escolas e universidades podem consultar horários especiais.</p>
+            <a class="btn btn-light btn-lg" href="mailto:museudamusica@itu.com.br?subject=Agendamento%20de%20visita">Agendar minha visita <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="col-lg-6 offset-lg-1">
+            <ol class="visit-steps">
+              <li><span>01</span><div><strong>Escolha uma data</strong><p>Confira o funcionamento regular e indique quando gostaria de vir.</p></div></li>
+              <li><span>02</span><div><strong>Escreva para o museu</strong><p>Conte quantas pessoas participarão e se a visita é de uma instituição.</p></div></li>
+              <li><span>03</span><div><strong>Aguarde a confirmação</strong><p>A equipe responderá pelo e-mail informado no contato.</p></div></li>
+            </ol>
+            <p class="visit-school-note">Visitas escolares e universitárias podem ser agendadas em horários especiais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space volunteer-section" id="voluntariado">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 order-lg-2"><img class="volunteer-image" src="img/voluntariado.svg" alt="Ilustração de pessoas reunidas em torno de uma partitura" loading="lazy" width="900" height="650"></div>
+          <div class="col-lg-5 order-lg-1">
+            <p class="eyebrow">Cultura se faz junto</p>
+            <h2 class="section-title">Doe tempo.<br><em>Multiplique histórias.</em></h2>
+            <!-- CONTEÚDO PROVISÓRIO: confirmar com a equipe como funciona o programa de voluntariado. -->
+            <p class="body-copy">O Instituto Cultural de Itu é formado por pessoas que dedicam seu conhecimento e trabalho voluntário à preservação da cultura. Quer contribuir com o museu?</p>
+            <a class="text-link" href="mailto:museudamusica@itu.com.br?subject=Interesse%20em%20voluntariado">Quero ser voluntário <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners-strip" aria-label="Instituição mantenedora e redes sociais">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <p class="eyebrow mb-3">Realização e parceria</p>
+            <div class="partner-lockup"><span class="partner-mark" aria-hidden="true">ICI</span><span><strong>Instituto Cultural de Itu</strong><small>Mantenedor do Museu da Música</small></span></div>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <p class="eyebrow mb-2">Acompanhe e saiba mais</p>
+            <a class="text-link" href="https://www.museudamusicaitu.com.br/" target="_blank" rel="noopener noreferrer">Site oficial do museu <span aria-hidden="true">↗</span></a>
+            <span class="partner-separator">·</span>
+            <a class="text-link" href="mailto:museudamusica@itu.com.br">Fale com a equipe <span aria-hidden="true">↗</span></a>
+            <!-- CONTEÚDO PROVISÓRIO: adicionar links e ícones dos perfis oficiais após confirmação dos endereços. -->
+            <div class="social-placeholders" aria-label="Perfis de redes sociais a confirmar">
+              <span aria-hidden="true">◎</span><span aria-hidden="true">▶</span><small>Perfis oficiais a confirmar</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5 footer-main">
+        <div class="col-md-6 col-lg-4">
+          <a class="brand-lockup brand-lockup-footer" href="index.html">
+            <img src="img/logo.svg" width="44" height="44" alt="">
+            <span><strong>Museu da Música</strong><small>ITU · SÃO PAULO</small></span>
+          </a>
+          <p class="footer-description">Um espaço de preservação, pesquisa e encontro com a memória musical de Itu e região.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h2 class="footer-heading">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li><li><a href="tour-virtual.html">Tour Virtual</a></li><li><a href="#exposicoes">Exposições</a></li><li><a href="#acervo-musical">Música</a></li><li><a href="#voluntariado">Seja Voluntário</a></li><li><a href="mailto:museudamusica@itu.com.br?subject=Agendamento%20de%20visita">Agendar visita</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2 class="footer-heading">Visite</h2>
+          <address>Rua Floriano Peixoto, 480<br>Itu — SP</address>
+          <p>Domingos, das 9h às 13h<br>Entrada franca</p>
+          <a href="mailto:museudamusica@itu.com.br">museudamusica@itu.com.br</a>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h2 class="footer-heading">Conecte-se</h2>
+          <p>Para informações, agendamentos e oportunidades de parceria, fale com a equipe.</p>
+          <!-- CONTEÚDO PROVISÓRIO: publicar links para redes sociais quando os perfis oficiais forem confirmados. -->
+          <div class="footer-social-placeholders" aria-label="Perfis de redes sociais a confirmar"><span aria-hidden="true">◎</span><span aria-hidden="true">▶</span><small>Perfis oficiais a confirmar</small></div>
+          <a class="footer-contact-link" href="mailto:museudamusica@itu.com.br">Enviar um e-mail <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-current-year>2026</span> Museu da Música – Itu</span>
+        <span>Mantido pelo Instituto Cultural de Itu · Projeto Integrador 2</span>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>

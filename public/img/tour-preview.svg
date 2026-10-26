@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#d9c5a5"/><stop offset="1" stop-color="#916d4e"/></linearGradient><linearGradient id="shade" x2="1"><stop stop-color="#173432" stop-opacity=".82"/><stop offset="1" stop-color="#173432" stop-opacity=".12"/></linearGradient></defs>
+  <rect width="1400" height="760" fill="#415d51"/><path d="M0 0h1400v440L700 125 0 440Z" fill="#728777"/><path d="M55 425 700 122l645 303v335H55Z" fill="url(#wall)"/>
+  <path d="M78 425 700 145l622 280" fill="none" stroke="#efdfc1" stroke-width="15"/>
+  <g fill="#344f47"><path d="M180 396V275q0-88 88-88t88 88v121Z"/><path d="M545 396V235q0-118 118-118t118 118v161Z"/><path d="M1045 396V275q0-88 88-88t88 88v121Z"/></g>
+  <g fill="#d8b68b"><path d="M195 276q0-73 73-73t73 73v8H195Z"/><path d="M562 236q0-100 100-100t100 100v8H562Z"/><path d="M1060 276q0-73 73-73t73 73v8h-146Z"/></g>
+  <path d="M0 670h1400v90H0Z" fill="#634a39"/><path d="M665 408h70v262h-70Z" fill="#604533"/>
+  <rect width="1400" height="760" fill="url(#shade)"/>
+</svg>
