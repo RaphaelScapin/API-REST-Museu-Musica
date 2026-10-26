@@ -17,13 +17,12 @@ Instale as dependências com `npm install` e inicie a API com `npm start`. O ser
 
 ## Publicar o site pelo GitHub Pages
 
-O workflow `.github/workflows/pages.yml` publica o conteúdo de `public/` no GitHub Pages quando há alterações na branch `Dev` ou quando o workflow é executado manualmente. O workflow envia somente o site estático; a API Express e o banco MySQL não são hospedados pelo Pages.
+O workflow `.github/workflows/pages.yml` publica o conteúdo de `public/` no GitHub Pages quando há alterações na branch `Dev` ou quando o workflow é executado manualmente. Na primeira execução, ele solicita habilitar o Pages com origem em GitHub Actions. O workflow envia somente o site estático; a API Express e o banco MySQL não são hospedados pelo Pages.
 
 Para ativar a publicação:
 
-1. No repositório, abra **Settings > Pages**.
-2. Em **Build and deployment**, selecione **GitHub Actions** como origem.
-3. Envie alterações para `Dev` ou execute manualmente o workflow **Publicar site no GitHub Pages** na aba **Actions**.
-4. Consulte **Settings > Pages** para acessar o endereço público. A primeira publicação e as atualizações podem levar alguns minutos.
+1. Envie alterações para `Dev` ou execute manualmente o workflow **Publicar site no GitHub Pages** na aba **Actions**.
+2. Se o workflow não conseguir habilitar o Pages, uma pessoa com acesso de administrador deve abrir **Settings > Pages** e selecionar **GitHub Actions** em **Build and deployment**. Depois, execute novamente o workflow.
+3. Consulte **Settings > Pages** para acessar o endereço público. A primeira publicação e as atualizações podem levar alguns minutos.
 
 As páginas usam caminhos relativos e podem ser servidas na raiz do site publicado. Para publicar a partir de outra branch, ajuste o gatilho do workflow.
