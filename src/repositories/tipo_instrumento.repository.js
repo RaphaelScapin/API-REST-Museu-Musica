@@ -1,4 +1,3 @@
-
 const { pool } = require('../config/database')
 
 const consultarTipoInstrumento = 'select * from tipo_instrumento'
