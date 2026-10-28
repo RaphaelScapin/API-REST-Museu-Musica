@@ -59,3 +59,22 @@ CREATE TABLE evento(
     data_fim_real DATE
 );
 
+CREATE TABLE historico (
+    id_historico INT AUTO_INCREMENT PRIMARY KEY,
+    id_agendamento INT NOT NULL UNIQUE,
+    data_visita DATE,
+    status VARCHAR(50),
+    FOREIGN KEY (id_agendamento)
+        REFERENCES agendamento(id_agendamento)
+);
+
+CREATE TABLE instrumento (
+    id_instrumento INT AUTO_INCREMENT PRIMARY KEY,
+    id_tipo INT NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    ano_fabricacao INT,
+    antigo_dono VARCHAR(255),
+    link_som VARCHAR(255),
+    FOREIGN KEY (id_tipo)
+        REFERENCES tipo_instrumento(id_tipo)
+);

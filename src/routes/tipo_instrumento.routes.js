@@ -1,6 +1,6 @@
 const express = require('express')
 const tipoInstrumentoController = require('../controllers/tipo_instrumento.controller')
-const { validarTipoInstrumento, validarIdTipoInstrumento } = require('../validators/tipo_instrumento.validator')
+const { validarTipoInstrumento, validarIdTipoInstrumento } = require('../validators/tipo_instrumento.validators')
 const validarResultado = require('../middleware/validarResultado')
 
 const router = express.Router()

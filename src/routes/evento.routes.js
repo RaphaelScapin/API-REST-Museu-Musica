@@ -1,6 +1,6 @@
 const express = require('express')
 const eventoController = require('../controllers/evento.controller')
-const { validarEvento, validarIdEvento } = require('../validators/evento.validator')
+const { validarEvento, validarIdEvento } = require('../validators/evento.validators')
 const validarResultado = require('../middleware/validarResultado')
 
 const router = express.Router()

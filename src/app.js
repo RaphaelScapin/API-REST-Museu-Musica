@@ -8,6 +8,8 @@ const salaRoutes = require('./routes/sala.routes')
 const partituraRoutes = require('./routes/partitura.routes')
 const tipoInstrumentoRoutes = require('./routes/tipo_instrumento.routes')
 const eventoRoutes = require('./routes/evento.routes')
+const historicoRoutes = require('./routes/historico.routes')
+const instrumentoRoutes = require('./routes/instrumento.routes')
 
 const app = express()
 app.use(express.json())
@@ -27,6 +29,8 @@ app.use('/museu/sala', salaRoutes)
 app.use('/museu/partitura', partituraRoutes)
 app.use('/museu/tipo_instrumento', tipoInstrumentoRoutes)
 app.use('/museu/evento', eventoRoutes)
+app.use('/museu/historico', historicoRoutes)
+app.use('/museu/instrumento', instrumentoRoutes)
 app.use((req, res)=> {
     res.status(404).json({
         erro: 'Rota não encontrada'
