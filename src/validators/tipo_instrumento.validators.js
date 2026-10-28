@@ -21,7 +21,4 @@ const validarIdTipoInstrumento = [
         .withMessage('O ID deve ser um número inteiro positivo')
 ]
 
-module.exports = {
-    validarTipoInstrumento,
-    validarIdTipoInstrumento
-}
+module.exports = { validarTipoInstrumento, validarIdTipoInstrumento }
