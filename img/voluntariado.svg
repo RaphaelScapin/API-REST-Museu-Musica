@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <rect width="900" height="650" rx="28" fill="#e4e8dc"/><circle cx="700" cy="145" r="82" fill="#d7b078" opacity=".55"/>
+  <path d="M0 470q210-100 420-15t480-15v210H0Z" fill="#8ca092"/>
+  <path d="M190 250h520v275H190Z" fill="#f7f2e7"/><path d="M230 285h440v220H230Z" fill="#e8dcc4"/>
+  <path d="M300 330h300M300 365h300M300 400h300M300 435h300" stroke="#aa7654" stroke-width="5"/>
+  <g><circle cx="230" cy="200" r="48" fill="#8b563f"/><path d="M143 440q8-182 87-182t86 182Z" fill="#0a7f88"/><path d="M180 300 300 422" stroke="#e7d0a9" stroke-width="14"/></g>
+  <g><circle cx="450" cy="175" r="52" fill="#b87952"/><path d="M354 430q8-190 96-190t96 190Z" fill="#9c6747"/><path d="m402 300 105 120" stroke="#e7d0a9" stroke-width="13"/></g>
+  <g><circle cx="666" cy="208" r="45" fill="#c9976e"/><path d="M584 445q8-170 82-170t82 170Z" fill="#526c5b"/><path d="M622 315 730 422" stroke="#e7d0a9" stroke-width="13"/></g>
+  <path d="M430 440q10-45 22-60 18 20 14 58m25 6q-5-52 14-70 20 24 14 68m22 4q0-38 17-53 15 18 10 52" fill="none" stroke="#72513b" stroke-width="6" stroke-linecap="round"/>
+</svg>

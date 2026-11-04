@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#dae2d2"/><stop offset="1" stop-color="#c09067"/></linearGradient></defs>
+  <rect width="900" height="650" fill="url(#bg)"/><path d="M0 0h900v500H0Z" fill="#d9c4a3"/>
+  <path d="M80 115h250v200H80Z" fill="#78958b"/><path d="M105 140h200v150H105Z" fill="#90b1a7"/><path d="M200 140v150M105 215h200" stroke="#f0dfc5" stroke-width="10"/>
+  <path d="M0 505h900v145H0Z" fill="#705344"/><path d="M250 345h430v190H250Z" fill="#392f2a"/><path d="M278 368h374v123H278Z" fill="#4c3c32"/>
+  <path d="M300 355 360 260h190l85 95Z" fill="#5a4032"/><path d="M360 260h190v88H360Z" fill="#684c39"/><path d="M370 275h170" stroke="#bf9566" stroke-width="7"/>
+  <g stroke="#e0bc83" stroke-width="5"><path d="M310 390h310M310 415h310M310 440h310M340 365v130M385 365v130M430 365v130M475 365v130M520 365v130M565 365v130M610 365v130"/></g>
+  <path d="M290 530v80m350-80v80M345 535v45m240-45v45" stroke="#332a25" stroke-width="18"/>
+  <path d="M700 180q30-70 60-90 25 44 0 90m20 0q30-70 60-90 25 44 0 90" fill="#76885f"/>
+</svg>
