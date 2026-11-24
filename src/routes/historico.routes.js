@@ -1,7 +1,7 @@
-
 const express = require('express')
+const {autenticarJwt} = require('../middleware/autenticacaoJwt')
 const router = express.Router()
-
+router.use(autenticarJwt)
 const historicoController = require('../controllers/historico.controller')
 const { validarHistorico } = require('../validators/historico.validator')
 

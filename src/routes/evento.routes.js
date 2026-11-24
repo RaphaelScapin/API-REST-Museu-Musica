@@ -2,9 +2,11 @@ const express = require('express')
 const eventoController = require('../controllers/evento.controller')
 const { validarEvento, validarIdEvento } = require('../validators/evento.validators')
 const validarResultado = require('../middleware/validarResultado')
+const {autenticarJwt} = require('../middleware/autenticacaoJwt')
 
 const router = express.Router()
 
+router.use(autenticarJwt)
 router.get('/', eventoController.listar)
 
 router.get('/:id',

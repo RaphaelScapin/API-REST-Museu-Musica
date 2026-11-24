@@ -2,9 +2,11 @@ const express = require('express')
 const salaController = require('../controllers/sala.controller')
 const { validarSala } = require('../validators/sala.validator')
 const validarResultado = require('../middleware/validarResultado')
+const {autenticarJwt} = require('../middleware/autenticacaoJwt')
 
 const router = express.Router()
 
+router.use(autenticarJwt)
 router.get('/', salaController.listar)
 router.get('/:id', salaController.buscarPorId)
 router.post('/', validarSala, validarResultado, salaController.criar)
