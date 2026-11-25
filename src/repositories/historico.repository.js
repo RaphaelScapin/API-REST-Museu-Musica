@@ -44,22 +44,36 @@ async function criar(dadosHistorico) {
 }
 
 async function atualizar(id, dadosHistorico) {
-    const sql = `UPDATE historico
-        SET id_agendamento = ?, data_visita = ?, status = ?
-        WHERE id_historico = ?`
+    const conexao = await pool.getConnection()
 
-    const [resultado] = await pool.query(sql, [
-        dadosHistorico.id_agendamento,
-        dadosHistorico.data_visita,
-        dadosHistorico.status,
-        id
-    ])
+    try {
+        await conexao.beginTransaction()
 
-    if (resultado.affectedRows === 0) {
-        return null
+        const sql = `UPDATE historico
+            SET id_agendamento = ?, data_visita = ?, status = ?
+            WHERE id_historico = ?`
+
+        const [resultado] = await conexao.execute(sql, [
+            dadosHistorico.id_agendamento,
+            dadosHistorico.data_visita,
+            dadosHistorico.status,
+            id
+        ])
+
+        if (resultado.affectedRows === 0) {
+            await conexao.rollback()
+            return null
+        }
+
+        await conexao.commit()
+        return buscarPorId(id)
+
+    } catch (erro) {
+        await conexao.rollback()
+        throw erro
+    } finally {
+        conexao.release()
     }
-
-    return buscarPorId(id)
 }
 
 async function remover(id) {

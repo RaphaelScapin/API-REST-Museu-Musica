@@ -1,3 +1,4 @@
+
 const { pool } = require('../config/database')
 
 const consultarEvento = 'select * from evento'
@@ -46,21 +47,46 @@ async function criar(dadosEvento) {
 }
 
 async function atualizar(id, dadosEvento) {
-    const evento = {
-        nome_evento: dadosEvento.nome_evento,
-        email_contato: dadosEvento.email_contato,
-        telefone_contato: dadosEvento.telefone_contato,
-        local: dadosEvento.local,
-        data_inicio: dadosEvento.data_inicio,
-        data_fim_previsto: dadosEvento.data_fim_previsto,
-        data_fim_real: dadosEvento.data_fim_real
+    const conexao = await pool.getConnection()
+
+    try {
+        await conexao.beginTransaction()
+
+        const sql = `UPDATE evento SET
+            nome_evento = ?,
+            email_contato = ?,
+            telefone_contato = ?,
+            local = ?,
+            data_inicio = ?,
+            data_fim_previsto = ?,
+            data_fim_real = ?
+            WHERE id_evento = ?`
+
+        const [resultado] = await conexao.execute(sql, [
+            dadosEvento.nome_evento,
+            dadosEvento.email_contato,
+            dadosEvento.telefone_contato ?? null,
+            dadosEvento.local,
+            dadosEvento.data_inicio,
+            dadosEvento.data_fim_previsto,
+            dadosEvento.data_fim_real ?? null,
+            id
+        ])
+
+        if (resultado.affectedRows === 0) {
+            await conexao.rollback()
+            return null
+        }
+
+        await conexao.commit()
+        return buscarPorId(id)
+
+    } catch (erro) {
+        await conexao.rollback()
+        throw erro
+    } finally {
+        conexao.release()
     }
-
-    const sql = 'UPDATE evento SET ? WHERE id_evento = ?'
-    const [resultado] = await pool.query(sql, [evento, id])
-
-    if (resultado.affectedRows === 0) { return null }
-    return buscarPorId(id)
 }
 
 async function remover(id) {

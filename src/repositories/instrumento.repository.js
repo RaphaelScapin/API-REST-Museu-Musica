@@ -48,25 +48,39 @@ async function criar(dadosInstrumento) {
 }
 
 async function atualizar(id, dadosInstrumento) {
-    const sql = `UPDATE instrumento
-        SET id_tipo = ?, nome = ?, ano_fabricacao = ?,
-        antigo_dono = ?, link_som = ?
-        WHERE id_instrumento = ?`
+    const conexao = await pool.getConnection()
 
-    const [resultado] = await pool.query(sql, [
-        dadosInstrumento.id_tipo,
-        dadosInstrumento.nome,
-        dadosInstrumento.ano_fabricacao,
-        dadosInstrumento.antigo_dono,
-        dadosInstrumento.link_som,
-        id
-    ])
+    try {
+        await conexao.beginTransaction()
 
-    if (resultado.affectedRows === 0) {
-        return null
+        const sql = `UPDATE instrumento
+            SET id_tipo = ?, nome = ?, ano_fabricacao = ?,
+            antigo_dono = ?, link_som = ?
+            WHERE id_instrumento = ?`
+
+        const [resultado] = await conexao.execute(sql, [
+            dadosInstrumento.id_tipo,
+            dadosInstrumento.nome,
+            dadosInstrumento.ano_fabricacao,
+            dadosInstrumento.antigo_dono,
+            dadosInstrumento.link_som,
+            id
+        ])
+
+        if (resultado.affectedRows === 0) {
+            await conexao.rollback()
+            return null
+        }
+
+        await conexao.commit()
+        return buscarPorId(id)
+
+    } catch (erro) {
+        await conexao.rollback()
+        throw erro
+    } finally {
+        conexao.release()
     }
-
-    return buscarPorId(id)
 }
 
 async function remover(id) {

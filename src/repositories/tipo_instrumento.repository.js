@@ -33,16 +33,36 @@ async function criar(dadosTipoInstrumento) {
     return buscarPorId(resultado.insertId)
 }
 
-async function atualizar(id, dadosTipoInstrumento) {
-    const sql = 'UPDATE tipo_instrumento SET descricao = ? WHERE id_tipo = ?'
-    const [resultado] = await pool.query(sql, [
-        dadosTipoInstrumento.descricao,
-        id
-    ])
 
-    if (resultado.affectedRows === 0) { return null }
-    return buscarPorId(id)
+async function atualizar(id, dadosTipoInstrumento) {
+    const conexao = await pool.getConnection()
+
+    try {
+        await conexao.beginTransaction()
+
+        const sql = 'UPDATE tipo_instrumento SET descricao = ? WHERE id_tipo = ?'
+
+        const [resultado] = await conexao.execute(sql, [
+            dadosTipoInstrumento.descricao,
+            id
+        ])
+
+        if (resultado.affectedRows === 0) {
+            await conexao.rollback()
+            return null
+        }
+
+        await conexao.commit()
+        return buscarPorId(id)
+
+    } catch (erro) {
+        await conexao.rollback()
+        throw erro
+    } finally {
+        conexao.release()
+    }
 }
+
 
 async function remover(id) {
     const sql = 'DELETE FROM tipo_instrumento WHERE id_tipo = ?'
