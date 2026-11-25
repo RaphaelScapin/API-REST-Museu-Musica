@@ -1,29 +1,26 @@
 
-function validarHistorico(req, res, next) {
-    const { id_agendamento, data_visita, status } = req.body
-    const erros = []
+const { body } = require('express-validator')
 
-    if (!Number.isInteger(Number(id_agendamento)) || Number(id_agendamento) <= 0) {
-        erros.push('O id_agendamento deve ser um número inteiro positivo')
-    }
+const validarHistorico = [
+    body('id_agendamento')
+        .exists({ checkFalsy: true })
+        .withMessage('O id_agendamento é obrigatório')
+        .bail()
+        .isInt({ min: 1 })
+        .withMessage('O id_agendamento deve ser um número inteiro positivo'),
 
-    if (data_visita && isNaN(Date.parse(data_visita))) {
-        erros.push('A data_visita deve ser uma data válida')
-    }
+    body('data_visita')
+        .optional({ nullable: true })
+        .isISO8601({ strict: true, strictSeparator: true })
+        .withMessage('A data_visita deve ser uma data válida no formato AAAA-MM-DD'),
 
-    if (status !== undefined && status !== null && typeof status !== 'string') {
-        erros.push('O status deve ser um texto')
-    }
-
-    if (status && status.length > 50) {
-        erros.push('O status deve ter no máximo 50 caracteres')
-    }
-
-    if (erros.length > 0) {
-        return res.status(400).json({ erros })
-    }
-
-    return next()
-}
+    body('status')
+        .optional({ nullable: true })
+        .isString()
+        .withMessage('O status deve ser um texto')
+        .bail()
+        .isLength({ max: 50 })
+        .withMessage('O status deve ter no máximo 50 caracteres')
+]
 
 module.exports = { validarHistorico }
