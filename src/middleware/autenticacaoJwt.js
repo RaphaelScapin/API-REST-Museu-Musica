@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const chaveJWT = process.env.JWT_SECRET
-const usuariosRepository = require('../repositories/usuarios.repository')
+const usuarioRepository = require('../repositories/usuario.repository')
 
 async function autenticarJwt(req, res, next) {
     const partesJwt = (req.get('Authorization') || '')
@@ -15,7 +15,7 @@ async function autenticarJwt(req, res, next) {
             return res.status(401).json({ erro: 'Token inválido ou expirado' })
         }
 
-        const usuario = await usuariosRepository.buscarPorId(payload.sub)
+        const usuario = await usuarioRepository.buscarPorId(payload.sub)
         if (!usuario) {
             return res.status(401).json({ erro: 'Usuário inexistente ou inativo' })
         }

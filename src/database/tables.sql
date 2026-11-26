@@ -79,13 +79,12 @@ CREATE TABLE instrumento (
         REFERENCES tipo_instrumento(id_tipo)
 );
 
-CREATE TABLE usuarios(
-    id UUID NOT NULL DEFAULT (UUID()),
+CREATE TABLE usuario(
+    id_usuario UUID NOT NULL DEFAULT (UUID()),
     email VARCHAR(255) NOT NULL,
     senha_hash VARCHAR(255) NOT NULL,
     status enum('ativo', 'inativo') NOT NULL DEFAULT 'ativo',
-    tipo enum('Admin', 'User') NOT NULL DEFAULT 'User',
     data_criacao DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     data_alteracao DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-    PRIMARY KEY (id), CONSTRAINT uk_usuarios_email UNIQUE (email)
+    PRIMARY KEY (id_usuario), CONSTRAINT uk_usuarios_email UNIQUE (email)
 );

@@ -10,7 +10,7 @@ const tipoInstrumentoRoutes = require('./routes/tipo_instrumento.routes')
 const eventoRoutes = require('./routes/evento.routes')
 const historicoRoutes = require('./routes/historico.routes')
 const instrumentoRoutes = require('./routes/instrumento.routes')
-const usuariosRoutes = require('./routes/usuarios.routes')
+const usuarioRoutes = require('./routes/usuario.routes')
 const authRoutes = require('./routes/auth.routes')
 
 const app = express()
@@ -33,7 +33,7 @@ app.use('/museu/tipo_instrumento', tipoInstrumentoRoutes)
 app.use('/museu/evento', eventoRoutes)
 app.use('/museu/historico', historicoRoutes)
 app.use('/museu/instrumento', instrumentoRoutes)
-app.use('/museu/usuarios', usuariosRoutes)
+app.use('/museu/usuario', usuarioRoutes)
 app.use('/museu/auth', authRoutes)
 app.use((req, res)=> {
     res.status(404).json({

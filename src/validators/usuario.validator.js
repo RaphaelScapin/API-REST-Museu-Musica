@@ -31,22 +31,13 @@ const validarCriacaoUsuario = [
     body('status')
         .optional()
         .isIn(['ativo', 'inativo'])
-        .withMessage('Use ativo ou inativo'),
-
-    body('tipo')
-        .optional()
-        .isIn(['Admin', 'User'])
-        .withMessage('Use Admin ou User')
+        .withMessage('Use ativo ou inativo')
 ];
 const validarAtualizacaoUsuario = [
     validarEmail(), validarSenha(true),
     body('status')
         .isIn(['ativo', 'inativo'])
-        .withMessage('Use ativo ou inativo'),
-
-    body('tipo')
-        .isIn(['Admin', 'User'])
-        .withMessage('Use Admin ou User')
+        .withMessage('Use ativo ou inativo')
 ];
 const validarIdUsuario = [param('id').isUUID().withMessage('Informe um UUID valido')];
 
